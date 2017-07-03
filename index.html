@@ -13,6 +13,7 @@
     <div id="app">
       <input type="text" v-model="uneAutreVar">
       <button v-on:click="addToList">Ajouter</button>
+      <label>filtre<input v-model="query"></label>
       <h1 v-if="on">
         {{ message }}
       </h1>
@@ -22,7 +23,7 @@
       </h1>
 
       <ul>
-        <li v-for="(person, index) in maList"
+        <li v-for="(person, index) in listFiltre"
           v-bind:style="{color: person.color}"
           v-bind:class="{red: index === 1}">
           #{{ index + 1 }} {{ person.name }}

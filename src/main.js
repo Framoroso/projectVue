@@ -12,6 +12,7 @@ new Vue({
     data() {
         return {
             on: true,
+            query: '',
             uneAutreVar: 'Bibi',
             message: 'Hello vue.js',
             maList: [
@@ -47,6 +48,13 @@ new Vue({
         remove(person) {
             let index = this.maList.indexOf(person);
             this.maList.splice(index, 1);
+        }
+    },
+    computed: {
+        listFiltre() {
+            return this.maList.filter(person => {
+                return person.name.toLowerCase().indexOf(this.query.toLowerCase()) === 0;
+            });
         }
     }
     // router,
