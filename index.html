@@ -28,6 +28,7 @@
           #{{ index + 1 }} {{ person.name }}
 
           <img v-bind:src="person | toAvatars">
+          <button v-model="person" v-on:click="remove(person)">Supprimer</button>
         </li>
       </ul>
 

@@ -16,15 +16,15 @@ new Vue({
             message: 'Hello vue.js',
             maList: [
                 {
-                    name: 'Adrien',
+                    name: 'Bibi',
                     color: '#FF00FF'
                 },
                 {
-                    name: 'Valentin',
+                    name: 'Moulin',
                     color: '#00FF00'
                 },
                 {
-                    name: 'Nicolas',
+                    name: 'Babe',
                     color: '#0000FF'
                 }
             ]
@@ -43,6 +43,10 @@ new Vue({
                 color: this.color
             };
             this.maList.push(person);
+        },
+        remove(person) {
+            let index = this.maList.indexOf(person);
+            this.maList.splice(index, 1);
         }
     }
     // router,
